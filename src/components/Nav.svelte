@@ -1,5 +1,10 @@
 <script>
   export let segment;
+  let showNav = false;
+
+  if (segment !== ".") {
+    showNav = true;
+  }
 </script>
 
 <style>
@@ -48,28 +53,30 @@
   }
 </style>
 
-<nav>
-  <ul>
-    <li>
-      <a aria-current={segment === 'about' ? 'page' : undefined} href="home">
-        compare
-      </a>
-    </li>
-    <li>
-      <a
-        rel="prefetch"
-        aria-current={segment === 'about' ? 'page' : undefined}
-        href="result">
-        history
-      </a>
-    </li>
+{#if segment}
+  <nav>
+    <ul>
+      <li>
+        <a aria-current={segment === 'home' ? 'page' : undefined} href="home">
+          compare
+        </a>
+      </li>
+      <li>
+        <a
+          rel="prefetch"
+          aria-current={segment === 'result' ? 'page' : undefined}
+          href="result">
+          history
+        </a>
+      </li>
 
-    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
+      <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 		     the blog data when we hover over the link or tap it on a touchscreen -->
-    <li>
-      <a aria-current={segment === 'blog' ? 'page' : undefined} href=".">
-        logout
-      </a>
-    </li>
-  </ul>
-</nav>
+      <li>
+        <a aria-current={segment === '.' ? 'page' : undefined} href=".">
+          logout
+        </a>
+      </li>
+    </ul>
+  </nav>
+{/if}

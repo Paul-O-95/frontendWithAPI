@@ -5,6 +5,7 @@
   let data = [];
   let modalArr = [];
   let grade = "";
+  let display = true;
 
   (async () => {
     let res = await axios.get(
@@ -33,7 +34,7 @@
       `https://62806eb5-9d24-4288-ab86-225eaf036470.mock.pstmn.io/delete/${id}`
     );
     console.log(id);
-    console.log(res);
+    display = false;
   }
 </script>
 

@@ -1,10 +1,23 @@
+<script>
+  import axios from "axios";
+
+  async function login(event) {
+    event.preventDefault();
+    let res = axios.post(
+      "https://62806eb5-9d24-4288-ab86-225eaf036470.mock.pstmn.io/login"
+    );
+    location.replace("./home");
+  }
+</script>
+
 <!-- Default form login -->
-<form class="text-center border border-light p-5" action="#!">
+<form class="text-center border border-light p-5" on:submit={login}>
 
   <p class="h4 mb-4">Sign in</p>
 
   <!-- Email -->
   <input
+    name="email"
     type="email"
     id="defaultLoginFormEmail"
     class="form-control mb-4"
@@ -12,6 +25,7 @@
 
   <!-- Password -->
   <input
+    name="password"
     type="password"
     id="defaultLoginFormPassword"
     class="form-control mb-4"
