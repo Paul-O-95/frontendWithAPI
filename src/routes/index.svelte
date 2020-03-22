@@ -6,7 +6,7 @@
     let res = axios.post(
       "https://62806eb5-9d24-4288-ab86-225eaf036470.mock.pstmn.io/login"
     );
-    location.replace("home");
+    location.replace("./home");
   }
 </script>
 

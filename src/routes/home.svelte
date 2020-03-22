@@ -14,7 +14,7 @@
     let result = res.data.inputs;
     data = [result, ...data];
     console.log(data);
-    location.replace("result");
+    location.replace("./result");
   };
 </script>
 
